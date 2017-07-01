@@ -40,7 +40,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
     <td>
       Chrome (fixed in 44)<br>
       Opera (fixed in 31)<br>
-      Safari
+      Safari (fixed in 10)
     </td>
     <td>
       <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898</a><br>
@@ -122,8 +122,8 @@ For cases where `min-height` is required, the workaround is to add a wrapper ele
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/OPbQgO">3.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/ByQYZJ">3.1.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/philipwalton/pen/OPbQgO">4.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/ByQYZJ">4.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -302,14 +302,14 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
     <td>
       Chrome<br>
       Edge<br>
-      Firefox<br>
+      Firefox (fixed in 52)<br>
       Opera<br>
       Safari
     </td>
     <td>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=262679">Chrome #262679</a><br>
-      <a href="https://connect.microsoft.com/IE/feedback/details/1753499/edge-fieldset-element-doesnt-work-properly-as-a-flex-container-display-flex">Edge #1753499</a><br>
-      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869</a><br>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=375693">Chrome #375693</a><br>
+      <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4511145/">Edge #4511145</a><br>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=148826">Safari #148826</a>
     </td>
@@ -318,7 +318,7 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
 
 Certain HTML elements, like `<fieldset>` and `<button>`, do not work as flex containers. The browsers default rendering of those element's UI conflicts with the `display: flex` declaration.
 
-Demo [9.1.a](http://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements don't work in Firefox, and demo [9.2.a](http://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers.
+Demo [9.1.a](http://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements didn't work in Firefox, and demo [9.2.a](http://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers.
 
 #### Workaround
 
@@ -366,7 +366,7 @@ This bug only affects nested containers set to `display: flex`. If you set the n
       <a href="http://codepen.io/anon/pen/BNrGwN">11.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/anon/pen/RPMqjz">11.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Safari</td>
+    <td>Safari (fixed in 10.1)</td>
     <td>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=136041">Safari #136041</a>
     </td>
@@ -455,7 +455,7 @@ If you need the `flex-basis` part of your `flex` declaration to be `!important` 
 
 When you make a flex container a float or to be absolutely positioned the
 dimensions of the container are determined by its contents if they are not
-explicitly set (aka: shink-to-fit). To determine these dimensions accurately
+explicitly set (aka: shrink-to-fit). To determine these dimensions accurately
 you need to know the dimensions from layout which the heuristics they're
 using to bypass this layout pass produces the incorrect result, thus the container
 cannot encompass its items correctly.
@@ -463,7 +463,7 @@ cannot encompass its items correctly.
 #### Workaround
 
 In order to workaround this you need to provide the explicit number of rows and columns
-for the flex container to allow the container to size around them. Unfortionately, this
+for the flex container to allow the container to size around them. Unfortunately, this
 results in removing the responsiveness. Here is the same example [using the workaround](http://codepen.io/gregwhitworth/pen/yOrYEp).
 
 ## Acknowledgments
